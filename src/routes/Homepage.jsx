@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import MainCategories from "../components/MainCategories";
+import FeaturedPosts from "../components/FeaturedPosts";
 
 const Homepage = () => {
   return (
@@ -53,10 +54,9 @@ const Homepage = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-arrow-up-right"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <line x1="7" y1="17" x2="17" y2="7" />
               <polyline points="7 7 17 7 17 17" />
@@ -67,6 +67,7 @@ const Homepage = () => {
       {/* CATEGORIES */}
       <MainCategories />
       {/* FEATURED POSTS */}
+      <FeaturedPosts />
       {/* POST LIST */}
     </div>
   );
