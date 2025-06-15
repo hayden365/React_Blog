@@ -19,7 +19,10 @@ const FeaturedPosts = () => {
           <span className="text-gray-500">2 days ago</span>
         </div>
         {/* items */}
-        <Link className="text-xl lg:text-3xl font-semibold lg:font-bold">
+        <Link
+          to="/test"
+          className="text-xl lg:text-3xl font-semibold lg:font-bold"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         </Link>
       </div>
