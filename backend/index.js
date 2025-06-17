@@ -5,6 +5,7 @@ import commentRouter from "./routes/comment.route.js";
 import connectDB from "./lib/connectDB.js";
 
 const app = express();
+app.use(express.json());
 
 // app.get("/test", (req, res) => res.status(200).send("it works!"));
 
