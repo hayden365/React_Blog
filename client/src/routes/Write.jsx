@@ -24,9 +24,7 @@ const Write = () => {
   useEffect(() => {
     video &&
       setValue(
-        (prev) =>
-          prev +
-          `<p><video controls src="${video.url}" style="max-width:100%" /></p>`
+        (prev) => prev + `<p><iframe class="ql-video" src="${video.url}"/></p>`
       );
   }, [video]);
 

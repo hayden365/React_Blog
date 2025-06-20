@@ -38,8 +38,7 @@ const Upload = ({ children, type, setProgress, setData }) => {
     }
   };
 
-  const handleUpload = async (e) => {
-    e.preventDefault();
+  const handleUpload = async () => {
     // Access the file input element using the ref
     const fileInput = fileInputRef.current;
     if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
@@ -95,6 +94,15 @@ const Upload = ({ children, type, setProgress, setData }) => {
       }
     }
   };
+
+  const handleFileChange = async (e) => {
+    e.preventDefault();
+    const file = e.target.files?.[0];
+    if (file) {
+      await handleUpload(file);
+    }
+  };
+
   return (
     <div>
       <input
@@ -102,7 +110,7 @@ const Upload = ({ children, type, setProgress, setData }) => {
         type="file"
         ref={fileInputRef}
         accept={`${type}/*`}
-        onChange={handleUpload}
+        onChange={handleFileChange}
       />
       <div onClick={() => fileInputRef.current.click()}>{children}</div>
     </div>
