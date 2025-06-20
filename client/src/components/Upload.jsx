@@ -112,7 +112,12 @@ const Upload = ({ children, type, setProgress, setData }) => {
         accept={`${type}/*`}
         onChange={handleFileChange}
       />
-      <div onClick={() => fileInputRef.current.click()}>{children}</div>
+      <div
+        onClick={() => fileInputRef.current.click()}
+        className="cursor-pointer"
+      >
+        {children}
+      </div>
     </div>
   );
 };
