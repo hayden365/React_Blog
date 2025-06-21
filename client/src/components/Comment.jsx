@@ -1,6 +1,6 @@
 import Image from "./Image";
 
-const Comment = () => {
+const Comment = ({ postId }) => {
   return (
     <div className="p-4 bg-slate-50 rounded-xl mb-8">
       <div className="">

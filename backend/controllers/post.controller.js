@@ -18,7 +18,10 @@ export const getPosts = async (req, res) => {
 };
 
 export const getPost = async (req, res) => {
-  const post = await Post.findOne({ slug: req.params.slug });
+  const post = await Post.findOne({ slug: req.params.slug }).populate(
+    "user",
+    "username img"
+  );
   res.status(200).json(post);
 };
 
@@ -55,8 +58,6 @@ export const createPost = async (req, res) => {
 
 export const deletePost = async (req, res) => {
   const { userId: clerkUserId } = req.auth();
-
-  console.log(req.auth());
 
   if (!clerkUserId) {
     return res.status(401).json("Not authenticated!");
