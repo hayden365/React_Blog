@@ -42,8 +42,8 @@ const Write = () => {
       });
     },
     onSuccess: (res) => {
-      toast.success("Post has been created");
-      navigate(`/${res.data.slug}`);
+      // toast.success("Post has been created");
+      // navigate(`/${res.data.slug}`);
     },
   });
 
@@ -60,7 +60,7 @@ const Write = () => {
     const formData = new FormData(e.target);
 
     const data = {
-      img: cover.filePath || "",
+      img: cover?.filePath || "",
       title: formData.get("title"),
       category: formData.get("category"),
       desc: formData.get("desc"),
