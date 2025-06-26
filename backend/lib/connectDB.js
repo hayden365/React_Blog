@@ -21,7 +21,6 @@ const connectDB = async () => {
       maxPoolSize: 10, // 최대 연결 풀 크기
       serverSelectionTimeoutMS: 5000, // 서버 선택 타임아웃
       socketTimeoutMS: 45000, // 소켓 타임아웃
-      bufferMaxEntries: 0, // 버퍼링 비활성화
       bufferCommands: false, // 명령 버퍼링 비활성화
     });
 
