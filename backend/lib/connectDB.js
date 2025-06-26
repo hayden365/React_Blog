@@ -37,17 +37,8 @@ const connectDB = async () => {
       console.log("MongoDB disconnected");
       isConnected = false;
     });
-
-    // Vercel에서 프로세스 종료 시 연결 정리
-    process.on("SIGINT", async () => {
-      await mongoose.connection.close();
-      console.log("MongoDB connection closed through app termination");
-      process.exit(0);
-    });
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-    isConnected = false;
-    throw error;
+  } catch (err) {
+    console.log(err);
   }
 };
 

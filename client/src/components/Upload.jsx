@@ -76,7 +76,6 @@ const Upload = ({ children, type, setProgress, setData }) => {
         // Abort signal to allow cancellation of the upload if needed.
         abortSignal: abortController.signal,
       });
-      console.log("Upload response:", uploadResponse);
       setData(uploadResponse);
     } catch (error) {
       // Handle specific error types provided by the ImageKit SDK.
