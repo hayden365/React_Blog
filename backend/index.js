@@ -29,7 +29,13 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
-  connectDB();
-  console.log("Server is running!");
-});
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, async () => {
+    await connectDB();
+    console.log(`Server is running on port ${PORT}!`);
+  });
+} else {
+  // Vercel 환경에서는 앱 시작 시 DB 연결
+  connectDB().catch(console.error);
+}
