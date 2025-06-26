@@ -53,8 +53,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const root = document.getElementById("root");
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>

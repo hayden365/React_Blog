@@ -30,3 +30,4 @@ dist-ssr
 
 # 환경변수 파일
 **/.env
+.vercel
